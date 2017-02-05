@@ -9,7 +9,7 @@ import json
 from bots.abcbot import ABCBot
 from chatterbot import ChatBot
 
-class MSChatBot(ABCBot):
+class SparkChatBot(ABCBot):
 
     BOTEMAIL = 'bot.ytj@sparkbot.io'
     BOTNAME = 'Tianjie\'s Bot'
@@ -19,7 +19,7 @@ class MSChatBot(ABCBot):
     chatbot = None
 
     def __init__(self, logger):
-        super(MSChatBot, self).__init__(logger)
+        super(SparkChatBot, self).__init__(logger)
         self.logger = logger
         self.chatbot = ChatBot(self.BOTNAME, trainer=self.BOTTRAINER)
         self.chatbot.train(self.BOTLANGUAGE)
