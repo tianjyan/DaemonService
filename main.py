@@ -26,7 +26,7 @@ configFile = file(confileFileName)
 config = json.load(configFile)
 configFile.close()
 logger.info(u'读取配置文件完成')
-chatBot = SparkChatBot(config['bearer'])
+chatBot = SparkChatBot(logger, config['bearer'])
 
 @post('/spark-bot')
 def spark(request):

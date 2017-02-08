@@ -2,11 +2,10 @@
 # -*- coding: utf-8 -*-
 # pylint: disable = C0103
 
+import os
 import logging
 from logging.handlers import RotatingFileHandler
 from logging import StreamHandler
-import os
-
 
 class Logger(object):
     """
@@ -17,10 +16,13 @@ class Logger(object):
     LOG_INFO = 'info.log'
     LOG_WARNING = 'warning.log'
     LOG_ERROR = 'error.log'
-
+    LOG_FOLDER = 'logs'
     logger = None
 
     def __init__(self):
+        base = os.path.join(os.getcwd(), self.LOG_FOLDER)
+        if not os.path.exists(base):
+            os.mkdir(base)
         self.debugLogger = self.initlogger(logging.DEBUG, self.LOG_DEBUG)
         self.infoLogger = self.initlogger(logging.INFO, self.LOG_INFO)
         self.warningLogger = self.initlogger(logging.WARNING, self.LOG_WARNING)
@@ -58,7 +60,7 @@ class Logger(object):
         formatter = logging.Formatter(self.LOG_FORMAT)
         logger = logging.getLogger(name)
         logger.setLevel(level)
-        fh = RotatingFileHandler(os.path.join(cwd, 'logs', name),
+        fh = RotatingFileHandler(os.path.join(cwd, self.LOG_FOLDER, name),
                                  maxBytes=10 * 1024 * 1024,
                                  backupCount=5)
         fh.setFormatter(formatter)

@@ -18,8 +18,8 @@ class SparkChatBot(ABCBot):
 
     chatbot = None
 
-    def __init__(self, logger):
-        super(SparkChatBot, self).__init__(logger)
+    def __init__(self, logger, bearer):
+        super(SparkChatBot, self).__init__(logger, bearer)
         self.logger = logger
         self.chatbot = ChatBot(self.BOTNAME, trainer=self.BOTTRAINER)
         self.chatbot.train(self.BOTLANGUAGE)
