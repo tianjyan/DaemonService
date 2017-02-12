@@ -103,3 +103,5 @@ ENV/
 # develop
 config.dev.json
 database.db
+ngrok
+test.*
