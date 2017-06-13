@@ -16,8 +16,11 @@
 # 真机环境中运行
 * 安装[Python 2.7.13](https://www.python.org/downloads/release/python-2713/)；
 * 安装依赖：`pip install -r requirements.txt`；
-* 运行：`python docker.py`
+* 运行：`python docker.py`。
 
 # 阿里云环境(Ubuntu 16.04)运行
-* 安装依赖：pip install -r requirements.txt；
-* 运行：`python daemon.py start`
+* 安装依赖：`pip install -r requirements.txt`；
+* 运行：`python daemon.py start`。
+
+# 扩展
+继承`bots/abcbot.py`可以扩展自己的Bot
