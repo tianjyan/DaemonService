@@ -1,4 +1,7 @@
 # 简介
+[![Platform](https://img.shields.io/badge/Language-Python%202.7-blue.svg)](https://www.python.org/)
+[![Gitter](https://img.shields.io/badge/chat-on%20gitter-blue.svg)](https://gitter.im/tianjyan/Lobby)
+
 自用的Spark Bot的样例程序
 
 # 开发准备
