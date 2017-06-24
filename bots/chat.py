@@ -9,6 +9,7 @@ import json
 from bots.abcbot import ABCBot
 from chatterbot import ChatBot
 
+
 class SparkChatBot(ABCBot):
 
     BOTEMAIL = 'bot.ytj@sparkbot.io'
@@ -27,7 +28,7 @@ class SparkChatBot(ABCBot):
     def webhookRequest(self, request):
         webhook = json.loads(request.body)
         email = webhook['data']['personEmail']
-        if  email != self.BOTEMAIL:
+        if email != self.BOTEMAIL:
             self.logger.info('user email: {0}'.format(email))
             result = self.getMessageContent(webhook['data']['id'])
             result = json.loads(result)

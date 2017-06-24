@@ -8,6 +8,7 @@
 import urllib2
 import json
 
+
 class ABCBot(object):
     logger = None
     MSGURL = 'https://api.ciscospark.com/v1/messages/'
@@ -15,9 +16,9 @@ class ABCBot(object):
     def __init__(self, logger, bearer):
         self.logger = logger
         self.BEARER = bearer
-        self.HEADERS = {'Accept' : 'application/json', \
-                'Content-Type' : 'application/json', \
-                'Authorization' : 'Bearer ' + self.BEARER}
+        self.HEADERS = {'Accept': 'application/json',
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer ' + self.BEARER}
 
     def getMessageContent(self, msgId):
         request = urllib2.Request('{}/{}'.format(self.MSGURL, msgId), headers=self.HEADERS)

@@ -10,6 +10,7 @@ import urllib2
 import json
 from bots.abcbot import ABCBot
 
+
 class BingWallpaperBot(ABCBot):
     BINGURL = 'http://bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&nc=1439260838289&pid=hp&video=1'
 

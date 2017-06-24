@@ -13,9 +13,11 @@ from bots.chat import SparkChatBot
 HOST = '0.0.0.0'
 PORT = 8080
 
+
 @post('/spark-bot')
 def spark(request):
     return chatBot.webhookRequest(request)
+
 
 logger = Logger()
 logger.info(u'Logger初始化完成')
