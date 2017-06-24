@@ -28,14 +28,17 @@ configFile.close()
 logger.info(u'读取配置文件完成')
 chatBot = SparkChatBot(logger, config['bearer'])
 
+
 @post('/spark-bot')
 def spark(request):
     return chatBot.webhookRequest(request)
+
 
 class Hook(object):
     def run(self):
         logger.info(u'启动 itty')
         run_itty(server='wsgiref', host=HOST, port=PORT)
+
 
 class SelfDaemon(Daemon):
     def run(self):
@@ -43,10 +46,11 @@ class SelfDaemon(Daemon):
         hook = Hook()
         hook.run()
 
+
 if __name__ == "__main__":
     daemon = SelfDaemon('/var/run/sparkbotservices.pid')
     if len(sys.argv) == 2:
-        if  sys.argv[1] == 'start':
+        if sys.argv[1] == 'start':
             daemon.start()
         elif sys.argv[1] == 'stop':
             daemon.stop()

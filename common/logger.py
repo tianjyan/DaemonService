@@ -7,6 +7,7 @@ import logging
 from logging.handlers import RotatingFileHandler
 from logging import StreamHandler
 
+
 class Logger(object):
     """
     给全局用的logger，输出到文件

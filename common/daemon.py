@@ -1,5 +1,5 @@
 # !/usr/bin/python
-#encoding:utf-8
+# encoding:utf-8
 # pylint: disable = C1001
 # pylint: disable = C0111
 # pylint: disable = C0103
@@ -9,6 +9,7 @@ import os
 import time
 import atexit
 from signal import SIGTERM
+
 
 class Daemon:
     """
@@ -105,7 +106,7 @@ class Daemon:
         if not pid:
             message = "pidfile %s does not exist. Daemon not running?\n"
             sys.stderr.write(message % self.pidfile)
-            return # not an error in a restart
+            return  # not an error in a restart
 
         # Try killing the daemon process
         try:
