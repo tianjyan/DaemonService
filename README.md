@@ -26,7 +26,7 @@
 * 运行：`python daemon.py start`。
 
 # Docker环境下运行
-* 创建镜像：`docker build -t spark-bots:v0.1`
+* 创建镜像：`docker build -t spark-bots:v0.1 .`
 * 保存镜像：`docker save spark-bots:v0.1 | gzip > spark-bots.tar.zip`
 * 导入镜像：`docker load -i spark-bots.tar.zip`
 * 运行镜像：`docker run -i -p 8080:8080 spark-bots:v0.1`
