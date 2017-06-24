@@ -1,4 +1,7 @@
 # 简介
+[![Platform](https://img.shields.io/badge/Language-Python%202.7-blue.svg)](https://www.python.org/)
+[![Gitter](https://img.shields.io/badge/chat-on%20gitter-blue.svg)](https://gitter.im/tianjyan/Lobby)
+
 自用的Spark Bot的样例程序
 
 # 开发准备
@@ -16,8 +19,17 @@
 # 真机环境中运行
 * 安装[Python 2.7.13](https://www.python.org/downloads/release/python-2713/)；
 * 安装依赖：`pip install -r requirements.txt`；
-* 运行：`python docker.py`
+* 运行：`python docker.py`。
 
 # 阿里云环境(Ubuntu 16.04)运行
-* 安装依赖：pip install -r requirements.txt；
-* 运行：`python daemon.py start`
+* 安装依赖：`pip install -r requirements.txt`；
+* 运行：`python daemon.py start`。
+
+# Docker环境下运行
+* 创建镜像：`docker build -t spark-bots:v0.1`
+* 保存镜像：`docker save spark-bots:v0.1 | gzip > spark-bots.tar.zip`
+* 导入镜像：`docker load -i spark-bots.tar.zip`
+* 运行镜像：`docker run -i -p 8080:8080 spark-bots:v0.1`
+
+# 扩展
+继承`bots/abcbot.py`可以扩展自己的Bot
