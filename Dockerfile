@@ -1,4 +1,4 @@
-FROM python:2
+FROM registry.docker-cn.com/library/python:2-slim
 
 WORKDIR /usr/src/app
 
